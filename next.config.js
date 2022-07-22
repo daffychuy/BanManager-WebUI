@@ -27,6 +27,9 @@ const nextConfig = (phase) => {
 
       return config
     },
+    eslint: {
+      ignoreDuringBuilds: true,
+    },
     env: (() => {
       let version = 'unknown'
 
@@ -48,6 +51,7 @@ const nextConfig = (phase) => {
 }
 
 module.exports = (phase, ...rest) => {
+  
   return withPlugins([
     [withBundleAnalyzer],
     [withTM]
